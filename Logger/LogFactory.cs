@@ -3,7 +3,7 @@
 public class LogFactory
 {
 
-    private string FilePath { get; set; } = "";
+    private string? FilePath { get; set; }
     public BaseLogger? CreateLogger(string className)
     {
         if (FilePath == "" || FilePath is null)
