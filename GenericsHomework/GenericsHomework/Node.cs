@@ -23,6 +23,7 @@ public class Node<T>
         {
             Next = this.Next
         };
+
         this.Next = newNode;
     }
 
@@ -42,6 +43,23 @@ public class Node<T>
 
         return false;
     }
+
+    public void Clear()
+    {
+        Node<T> current = Next;
+        Node<T> temp;
+
+        while (current != this)
+        {
+            temp = current.Next;
+            current.Next = current;
+            current = temp;
+        }
+
+        Next = this;
+    }
+
+
 
     public override string? ToString()
     {
